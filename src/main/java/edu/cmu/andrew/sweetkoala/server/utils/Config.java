@@ -1,6 +1,10 @@
 package edu.cmu.andrew.sweetkoala.server.utils;
 
 import java.util.HashMap;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.HashMap;
+import java.util.Properties;
 
 public class Config {
 
@@ -15,7 +19,6 @@ public class Config {
     public static String logFile = "/var/log/app.log";
     public static String logLevel = "ERROR";
     public static String logName = "AppLog";
-
 
 
 

@@ -11,8 +11,11 @@ public class Manager {
     protected MongoCollection<Document> userCollection;
     protected MongoCollection<Document> sessionCollection;
 
+    protected MongoCollection<Document> publisherCollection;
+
     public Manager() {
         this.userCollection = MongoPool.getInstance().getCollection("users");
+        this.publisherCollection = MongoPool.getInstance().getCollection("publishers");
     }
 
     protected AppException handleException(String message, Exception e){
