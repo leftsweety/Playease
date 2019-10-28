@@ -2,6 +2,18 @@ Team Sweetkoala
 
 Playease
 
+
+
+**For Project 8**
+
+Two resources: 
+
+1) publishers - Zuotian Li
+
+2) customers - Zihan Cao
+
+
+
 V 1.1.1 : basic project with one post request on resource customer
 
 V 1.1.2 : project with CRUD on two resources: **project 8 delivery**
