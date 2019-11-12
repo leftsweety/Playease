@@ -30,6 +30,8 @@ public class CustomerHttpInterface extends HttpInterface {
         ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
     }
 
+
+    //http://localhost:8080/api/customers/reset
     @POST
     @Path("/reset")
     @Consumes({MediaType.APPLICATION_JSON})

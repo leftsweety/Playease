@@ -63,7 +63,7 @@ public class CustomerManager extends Manager {
         try {
 
 
-            Bson filter = new Document("_id", new ObjectId(customer.getId()));
+            Bson filter = new Document("_id", new ObjectId(customer.getCustomer_Id()));
             Bson newValue = new Document()
                     .append("first_name", customer.getFirst_name())
                     .append("last_name", customer.getLast_name())
