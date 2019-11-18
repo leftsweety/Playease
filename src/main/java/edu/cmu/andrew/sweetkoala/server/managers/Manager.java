@@ -12,38 +12,20 @@ public class Manager {
     protected MongoCollection<Document> sessionCollection;
 
     protected MongoCollection<Document> publisherCollection;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 1.1.3 Version for Zuotian Li
     protected MongoCollection<Document> commentCollection;
     protected MongoCollection<Document> typeCollection;
     protected MongoCollection<Document> weatherCollection;
     protected MongoCollection<Document> ratingCollection;
-<<<<<<< HEAD
->>>>>>> Playease 1.1.3 for Zuotian Li
-=======
->>>>>>> 1.1.3 Version for Zuotian Li
+
 
     public Manager() {
         this.userCollection = MongoPool.getInstance().getCollection("users");
         this.publisherCollection = MongoPool.getInstance().getCollection("publishers");
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 1.1.3 Version for Zuotian Li
         this.commentCollection = MongoPool.getInstance().getCollection("comments");
         this.typeCollection = MongoPool.getInstance().getCollection("types");
         this.weatherCollection = MongoPool.getInstance().getCollection("weathers");
         this.ratingCollection = MongoPool.getInstance().getCollection("ratings");
-<<<<<<< HEAD
->>>>>>> Playease 1.1.3 for Zuotian Li
-=======
->>>>>>> 1.1.3 Version for Zuotian Li
+
     }
 
     protected AppException handleException(String message, Exception e){

@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-<<<<<<< HEAD
-    <mapping directory="" vcs="Git" />
-<<<<<<< HEAD
-=======
-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
->>>>>>> Playease 1.1.3 for Zuotian Li
-=======
-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
->>>>>>> 1.1.3 Version for Zuotian Li
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
