@@ -101,8 +101,6 @@ public class PaymentHttpInterface extends HttpInterface{
     public AppResponse resetPayments(Object request){
 
         try{
-            JSONObject json = null;
-            json = new JSONObject(ow.writeValueAsString(request));
 
             PaymentManager.getInstance().reSetPayment();
 
