@@ -6,10 +6,10 @@ public class Order {
     String customer_id = null;
     String date = null;
     String time = null;
-    String number_of_people = null;
+    Integer number_of_people = null;
     String status = null;
 
-    public Order(String order_id, String customer_id, String date, String time, String number_of_people, String status) {
+    public Order(String order_id, String customer_id, String date, String time, Integer number_of_people, String status) {
         this.order_id = order_id;
         this.customer_id = customer_id;
         this.date = date;
@@ -34,7 +34,7 @@ public class Order {
         return time;
     }
 
-    public String getNumber_of_people() {
+    public int getNumber_of_people() {
         return number_of_people;
     }
 
@@ -58,7 +58,7 @@ public class Order {
         this.time = time;
     }
 
-    public void setNumber_of_people(String number_of_people) {
+    public void setNumber_of_people(int number_of_people) {
         this.number_of_people = number_of_people;
     }
 

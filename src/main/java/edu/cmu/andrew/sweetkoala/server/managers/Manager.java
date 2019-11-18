@@ -17,7 +17,6 @@ public class Manager {
     protected MongoCollection<Document> weatherCollection;
     protected MongoCollection<Document> ratingCollection;
 
-
     public Manager() {
         this.userCollection = MongoPool.getInstance().getCollection("users");
         this.publisherCollection = MongoPool.getInstance().getCollection("publishers");
@@ -25,7 +24,6 @@ public class Manager {
         this.typeCollection = MongoPool.getInstance().getCollection("types");
         this.weatherCollection = MongoPool.getInstance().getCollection("weathers");
         this.ratingCollection = MongoPool.getInstance().getCollection("ratings");
-
     }
 
     protected AppException handleException(String message, Exception e){

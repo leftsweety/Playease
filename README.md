@@ -25,3 +25,7 @@ https://docs.google.com/document/d/14Fes_Kvj2OCnpGvtfIH-gUaJNR_ZseYrtK51bRnlZz8/
 **APP Homework Submission for Zihan Cao**
 
 https://docs.google.com/document/d/1LB73kDy0dbml9594hyfA0qET76R9GD4L_smwsB3KzLM/edit?usp=sharing
+
+
+
+V 1.1.4 : Finish all resources' CRUD operations

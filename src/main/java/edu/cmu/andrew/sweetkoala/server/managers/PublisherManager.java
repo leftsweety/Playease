@@ -237,7 +237,7 @@ public class PublisherManager extends Manager {
         publisherInsert(db,"publishers","","Rubio","Cao","Koala","123","yo@gmail.com","88888888","hangzhou","001",736);
         publisherInsert(db,"publishers","","Tony","ritu","Rao","89qa","5790dfgh@hlk.com","856788","hangzhou","003",5796);
         publisherInsert(db,"publishers","","Xinyong","Lyu","aray","703","678@fghj.com","4567","Fuyang","002",5666);
-
+        publisherInsert(db,"publishers","","Xinyong","Lyu","Aray","703","678@fghj.com","4567","Fuyang","002",5666);
 
     }
     private static void publisherInsert(MongoDatabase db, String collectionName,String publisher_id, String first_name, String last_name, String username, String password, String email, String phone, String location, String type_id, Integer coin){
