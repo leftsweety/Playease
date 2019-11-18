@@ -101,9 +101,12 @@ public class PaymentHttpInterface extends HttpInterface{
     public AppResponse resetPayments(Object request){
 
         try{
+<<<<<<< HEAD
             JSONObject json = null;
             json = new JSONObject(ow.writeValueAsString(request));
 
+=======
+>>>>>>> 1.1.3 Version for Zuotian Li
             PaymentManager.getInstance().reSetPayment();
 
             return new AppResponse("Insert Successful");
