@@ -42,7 +42,11 @@ public class WeatherHttpInterface extends HttpInterface{
             Weather newweather = new Weather(
                     null,
                     json.getString("type_id"),
+<<<<<<< HEAD
+                    json.getString("event_type")
+=======
                     json.getString("status")
+>>>>>>> 1.1.3 Version for Zuotian Li
             );
             WeatherManager.getInstance().createWeather(newweather);
             return new AppResponse("Insert Successful");

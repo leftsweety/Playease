@@ -41,7 +41,11 @@ public class WeatherManager extends Manager {
             JSONObject json = new JSONObject(weather);
 
             Document newDoc = new Document()
+<<<<<<< HEAD
+                    .append("event_weather", weather.getType_id()).append("status",weather.getStatus());
+=======
                     .append("type_id", weather.getType_id()).append("status",weather.getStatus());
+>>>>>>> 1.1.3 Version for Zuotian Li
             if (newDoc != null)
                 weatherCollection.insertOne(newDoc);
             else

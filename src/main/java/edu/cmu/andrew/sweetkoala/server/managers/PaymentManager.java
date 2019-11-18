@@ -96,13 +96,21 @@ public class PaymentManager extends Manager {
 
         MongoClient mongoCli = new MongoClient();
         MongoDatabase db = mongoCli.getDatabase("playease");
-        MongoCollection<Document> collection = db.getCollection("payments");
+<<<<<<< HEAD
+        MongoCollection<Document> collection = db.getCollection("Payments");
         collection.drop();
         db.createCollection("payments");
         paymentInsert(db,"payments","","111",69,"15-5-5","07-08-45");
         paymentInsert(db,"payments","","112",56,"","");
         paymentInsert(db,"payments","","113",67,"","");
-
+=======
+        MongoCollection<Document> collection = db.getCollection("payments");
+        collection.drop();
+        db.createCollection("payments");
+        paymentInsert(db,"payments","","111",69,"15-5-5","07-08-45");
+        paymentInsert(db,"payments","","112",56,"15-5-6","07-08-43");
+        paymentInsert(db,"payments","","113",67,"15-5-4","07-08-23");
+>>>>>>> 1.1.3 Version for Zuotian Li
 
     }
     private static void paymentInsert(MongoDatabase db, String collectionName,String payment_id, String order_id, Integer cost, String date, String time){

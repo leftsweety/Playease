@@ -98,12 +98,17 @@ import java.util.ArrayList;
         public AppResponse resetRatings(Object request){
 
             try{
+<<<<<<< HEAD
+                JSONObject json = null;
+                json = new JSONObject(ow.writeValueAsString(request));
 
                 RatingManager.getInstance().reSetRating();
 
+=======
 
                 RatingManager.getInstance().reSetRating();
                 ArrayList<Rating> publishers = RatingManager.getInstance().getRatingList();
+>>>>>>> 1.1.3 Version for Zuotian Li
                 return new AppResponse("Insert Successful");
 
             }catch (Exception e){

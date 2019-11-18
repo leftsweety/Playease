@@ -4,5 +4,10 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="1.8.0_191" project-jdk-type="JavaSDK" />
+</project>
+=======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="12" project-jdk-type="JavaSDK" />
 </project>
+>>>>>>> 1.1.3 Version for Zuotian Li
