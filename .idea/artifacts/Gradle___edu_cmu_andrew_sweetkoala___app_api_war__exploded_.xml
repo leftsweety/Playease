@@ -10,10 +10,10 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/app-api.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="edu.cmu.andrew.sweetkoala.app-api.main/web/Web Gradle : app-api.war" />
+      <element id="javaee-facet-resources" facet="Playease.app-api.main/web/Web Gradle : app-api.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="edu.cmu.andrew.sweetkoala.app-api.main" />
+          <element id="module-output" name="Playease.app-api.main" />
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
