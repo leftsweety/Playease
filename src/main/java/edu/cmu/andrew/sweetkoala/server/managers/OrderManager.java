@@ -14,7 +14,7 @@ import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import org.json.JSONObject;
 
-public class OrderManager {
+public class OrderManager extends Manager {
 
     public static OrderManager _self;
     private MongoCollection<Document> orderCollection;
@@ -28,6 +28,34 @@ public class OrderManager {
         if (_self == null)
             _self = new OrderManager();
         return _self;
+    }
+
+    public void createOrder(Order order) throws AppException {
+
+        try{
+            JSONObject json = new JSONObject(order);
+
+            String order_id = null;
+            String customer_id = null;
+            String date = null;
+            String time = null;
+            String number_of_people = null;
+            String status = null;
+
+            Document newDoc = new Document()
+                    .append("customer_id", order.getCustomer_id())
+                    .append("date", order.getDate())
+                    .append("time", order.getTime())
+                    .append("number_of_people", order.getNumber_of_people())
+                    .append("status", order.getStatus());
+            if (newDoc != null)
+                orderCollection.insertOne(newDoc);
+            else
+                throw new AppInternalServerException(0, "Failed to create new order");
+
+        }catch(Exception e){
+            throw handleException("Create Order", e);
+        }
     }
 
 }

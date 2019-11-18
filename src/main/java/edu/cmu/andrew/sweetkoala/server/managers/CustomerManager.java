@@ -23,7 +23,6 @@ public class CustomerManager extends Manager {
     public static CustomerManager _self;
     private MongoCollection<Document> customerCollection;
 
-
     public CustomerManager() {
         this.customerCollection = MongoPool.getInstance().getCollection("customers");
     }
@@ -56,13 +55,10 @@ public class CustomerManager extends Manager {
         }catch(Exception e){
             throw handleException("Create Customer", e);
         }
-
     }
 
     public void updateCustomer( Customer customer) throws AppException {
         try {
-
-
             Bson filter = new Document("_id", new ObjectId(customer.getCustomer_Id()));
             Bson newValue = new Document()
                     .append("first_name", customer.getFirst_name())
@@ -221,6 +217,7 @@ public class CustomerManager extends Manager {
             throw handleException("Get Customer List", e);
         }
     }
+
     public void resetCustomers() throws AppException {
         try{
             customerCollection.drop();
