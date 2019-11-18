@@ -2,12 +2,17 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+<<<<<<< HEAD
       <module name="app-api.main" target="1.8" />
       <module name="app-api.test" target="1.8" />
       <module name="edu.cmu.andrew.karim.app-api.main" target="1.8" />
       <module name="edu.cmu.andrew.karim.app-api.test" target="1.8" />
       <module name="edu.cmu.andrew.sweetkoala.app-api.main" target="1.8" />
       <module name="edu.cmu.andrew.sweetkoala.app-api.test" target="1.8" />
+=======
+      <module name="edu.cmu.andrew.karim.app-api.main" target="1.8" />
+      <module name="edu.cmu.andrew.karim.app-api.test" target="1.8" />
+>>>>>>> Playease 1.1.3 for Zuotian Li
     </bytecodeTargetLevel>
   </component>
 </project>
