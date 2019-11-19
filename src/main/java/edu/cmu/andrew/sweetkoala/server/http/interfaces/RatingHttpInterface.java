@@ -98,11 +98,12 @@ import java.util.ArrayList;
         public AppResponse resetRatings(Object request){
 
             try{
-                JSONObject json = null;
-                json = new JSONObject(ow.writeValueAsString(request));
 
                 RatingManager.getInstance().reSetRating();
 
+
+                RatingManager.getInstance().reSetRating();
+                ArrayList<Rating> publishers = RatingManager.getInstance().getRatingList();
                 return new AppResponse("Insert Successful");
 
             }catch (Exception e){

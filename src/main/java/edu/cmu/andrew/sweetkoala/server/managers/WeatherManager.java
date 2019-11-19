@@ -41,7 +41,7 @@ public class WeatherManager extends Manager {
             JSONObject json = new JSONObject(weather);
 
             Document newDoc = new Document()
-                    .append("event_weather", weather.getType_id()).append("status",weather.getStatus());
+                    .append("type_id", weather.getType_id()).append("status",weather.getStatus());
             if (newDoc != null)
                 weatherCollection.insertOne(newDoc);
             else

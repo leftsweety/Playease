@@ -103,6 +103,7 @@ public class PaymentManager extends Manager {
         paymentInsert(db,"payments","","112",56,"","");
         paymentInsert(db,"payments","","113",67,"","");
 
+
     }
     private static void paymentInsert(MongoDatabase db, String collectionName,String payment_id, String order_id, Integer cost, String date, String time){
         MongoCollection<Document> collection = db.getCollection(collectionName);

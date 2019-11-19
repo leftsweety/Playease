@@ -67,10 +67,6 @@ public class Publisher {
         return type_id;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Playease 1.1.3 for Zuotian Li
     public Integer getCoin() {
         return coin;
     }
