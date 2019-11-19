@@ -2,7 +2,7 @@ package edu.cmu.andrew.sweetkoala.server.models;
 
 public class Customer {
 
-    String id = null;
+    String customer_id = null;
     String first_name = null;
     String last_name = null;
     String username = null;
@@ -12,8 +12,8 @@ public class Customer {
     String preference_type_id = null;
     Integer coin;
 
-    public Customer(String id, String first_name, String last_name, String username, String password, String email, String phone, String preference_type_id, Integer coin) {
-        this.id = id;
+    public Customer(String customer_id, String first_name, String last_name, String username, String password, String email, String phone, String preference_type_id, Integer coin) {
+        this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.username = username;
@@ -24,8 +24,8 @@ public class Customer {
         this.coin = coin;
     }
 
-    public String getId() {
-        return id;
+    public String getCustomer_Id() {
+        return customer_id;
     }
 
     public String getFirst_name() {
@@ -60,8 +60,8 @@ public class Customer {
         return coin;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCustomer_Id(String id) {
+        this.customer_id = id;
     }
 
     public void setFirst_name(String first_name) {

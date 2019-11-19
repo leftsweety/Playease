@@ -6,8 +6,10 @@ import com.mongodb.client.MongoCollection;
 import edu.cmu.andrew.sweetkoala.server.http.exceptions.HttpBadRequestException;
 import edu.cmu.andrew.sweetkoala.server.http.responses.AppResponse;
 import edu.cmu.andrew.sweetkoala.server.http.utils.PATCH;
+import edu.cmu.andrew.sweetkoala.server.managers.EventManager;
 import edu.cmu.andrew.sweetkoala.server.models.Customer;
 import edu.cmu.andrew.sweetkoala.server.managers.CustomerManager;
+import edu.cmu.andrew.sweetkoala.server.models.Event;
 import edu.cmu.andrew.sweetkoala.server.utils.*;
 import edu.cmu.andrew.sweetkoala.server.utils.AppLogger;
 import org.bson.Document;
@@ -30,6 +32,8 @@ public class CustomerHttpInterface extends HttpInterface {
         ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
     }
 
+
+    // http://localhost:8080/api/customers/reset
     @POST
     @Path("/reset")
     @Consumes({MediaType.APPLICATION_JSON})
@@ -47,10 +51,9 @@ public class CustomerHttpInterface extends HttpInterface {
         }catch (Exception e){
             throw handleException("POST customers", e);
         }
-
     }
 
-
+    // http://localhost:8080/api/customers
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
@@ -59,16 +62,6 @@ public class CustomerHttpInterface extends HttpInterface {
         try{
             JSONObject json = null;
             json = new JSONObject(ow.writeValueAsString(request));
-
-            String id = null;
-            String first_name = null;
-            String last_name = null;
-            String username = null;
-            String password = null;
-            String email = null;
-            String phone = null;
-            String preference_type_id = null;
-            Integer coin;
 
             Customer newcustomer = new Customer(
                     null,
@@ -88,7 +81,6 @@ public class CustomerHttpInterface extends HttpInterface {
         }catch (Exception e){
             throw handleException("POST customers", e);
         }
-
     }
 
     //Get List: http://localhost:8080/api/customers
@@ -97,7 +89,7 @@ public class CustomerHttpInterface extends HttpInterface {
     //Filter: http://localhost:8080/api/customers?preference_type_id=1
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public AppResponse getUsers(@Context HttpHeaders headers, @QueryParam("sortby") String sortby, @QueryParam("offset") Integer offset,
+    public AppResponse getCustomers(@Context HttpHeaders headers, @QueryParam("sortby") String sortby, @QueryParam("offset") Integer offset,
                                 @QueryParam("count") Integer count, @QueryParam("preference_type_id") String preference_type_id){
         try{
             AppLogger.info("Got an API call");
@@ -121,6 +113,7 @@ public class CustomerHttpInterface extends HttpInterface {
         }
     }
 
+    // http://localhost:8080/api/customers/5dcc8bf9ae092861bf45cbb7
     @PATCH
     @Path("/{customerId}")
     @Consumes({ MediaType.APPLICATION_JSON})
@@ -152,6 +145,7 @@ public class CustomerHttpInterface extends HttpInterface {
         return new AppResponse("Update Successful");
     }
 
+    // http://localhost:8080/api/customers/5dcc8bf9ae092861bf45cbb7
     @DELETE
     @Path("/{customerId}")
     @Consumes({ MediaType.APPLICATION_JSON })
@@ -169,6 +163,7 @@ public class CustomerHttpInterface extends HttpInterface {
 
     }
 
+    // http://localhost:8080/api/customers/5dcc8bf9ae092861bf45cbb7
     @GET
     @Path("/{customerId}")
     @Produces({MediaType.APPLICATION_JSON})
@@ -185,9 +180,7 @@ public class CustomerHttpInterface extends HttpInterface {
         }catch (Exception e){
             throw handleException("GET /customers/{customerId}", e);
         }
-
     }
-
 
 
 }

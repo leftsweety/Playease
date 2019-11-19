@@ -67,7 +67,6 @@ public class Publisher {
         return type_id;
     }
 
-
     public Integer getCoin() {
         return coin;
     }
