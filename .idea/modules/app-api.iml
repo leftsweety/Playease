@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<module external.linked.project.id="app-api" external.linked.project.path="$MODULE_DIR$/../../../../../Architecture &amp;amp;amp; Programming Principles/Project/Playease" external.root.project.path="$MODULE_DIR$/../../../../../Architecture &amp;amp;amp; Programming Principles/Project/Playease" external.system.id="GRADLE" external.system.module.group="edu.cmu.andrew.sweetkoala" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-=======
-<module external.linked.project.id="app-api" external.linked.project.path="$MODULE_DIR$/../../../../../Architecture &amp;amp;amp;amp; Programming Principles/Project/Playease" external.root.project.path="$MODULE_DIR$/../../../../../Architecture &amp;amp;amp;amp; Programming Principles/Project/Playease" external.system.id="GRADLE" external.system.module.group="edu.cmu.andrew.sweetkoala" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
->>>>>>> 28f8b57da8c949aed1596e712402ea670a80cbb5
+<module external.linked.project.id="app-api" external.linked.project.path="$MODULE_DIR$/../../../../../Architecture &amp;amp; Programming Principles/Project/Playease" external.root.project.path="$MODULE_DIR$/../../../../../Architecture &amp;amp; Programming Principles/Project/Playease" external.system.id="GRADLE" external.system.module.group="edu.cmu.andrew.sweetkoala" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../..">
