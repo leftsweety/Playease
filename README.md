@@ -33,3 +33,7 @@ V 1.1.4 : Finish all resources' CRUD operations
 
 
 V 1.1.5 : Get sessions done
+
+
+
+V 1.1.6 : Get sample API done with session
