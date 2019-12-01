@@ -9,6 +9,8 @@ import edu.cmu.andrew.sweetkoala.server.http.utils.PATCH;
 import edu.cmu.andrew.sweetkoala.server.managers.EventManager;
 import edu.cmu.andrew.sweetkoala.server.models.Customer;
 import edu.cmu.andrew.sweetkoala.server.managers.CustomerManager;
+import edu.cmu.andrew.sweetkoala.server.managers.SessionManager;
+import edu.cmu.andrew.sweetkoala.server.models.Session;
 import edu.cmu.andrew.sweetkoala.server.models.Event;
 import edu.cmu.andrew.sweetkoala.server.utils.*;
 import edu.cmu.andrew.sweetkoala.server.utils.AppLogger;

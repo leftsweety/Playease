@@ -9,6 +9,8 @@ import edu.cmu.andrew.sweetkoala.server.http.responses.AppResponse;
 import edu.cmu.andrew.sweetkoala.server.http.utils.PATCH;
 import edu.cmu.andrew.sweetkoala.server.models.Publisher;
 import edu.cmu.andrew.sweetkoala.server.managers.PublisherManager;
+import edu.cmu.andrew.sweetkoala.server.managers.SessionManager;
+import edu.cmu.andrew.sweetkoala.server.models.Session;
 import edu.cmu.andrew.sweetkoala.server.utils.*;
 import edu.cmu.andrew.sweetkoala.server.utils.AppLogger;
 import org.bson.Document;
@@ -19,6 +21,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
+import java.util.Locale;
 
 @Path("/publishers")
 
@@ -201,5 +204,32 @@ public class PublisherHttpInterface extends HttpInterface{
 
     }
 
+    // http://localhost:8080/api/publishers/location/5de34728c97ba821ce644f1e
+    @GET
+    @Path("/location/{publisherId}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public AppResponse getPublisherLocation(@Context HttpHeaders headers, @PathParam("publisherId") String publisherId){
+
+        try{
+            Session session = SessionManager.getInstance().getSessionForTokenPublisher(headers);
+            if(!session.getUserId().equals(publisherId))
+                throw new HttpBadRequestException(0, "Invalid user id");
+            AppLogger.info("Got an API call");
+            ArrayList<Publisher> publishers = PublisherManager.getInstance().getPublisherById(publisherId);
+
+            if(publishers != null) {
+                String location = null;
+                for (Publisher publisher : publishers)
+                    location = publisher.getLocation();
+                return new AppResponse(location);
+            }
+            else
+                throw new HttpBadRequestException(0, "Problem with getting publishers");
+        }catch (Exception e){
+            throw handleException("GET /publishers/{publisherId}", e);
+        }
+
+
+    }
 
 }

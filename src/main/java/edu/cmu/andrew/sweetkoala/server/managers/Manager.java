@@ -32,7 +32,33 @@ public class Manager {
     private MongoCollection<Document> favorite_LocationCollection;
     private MongoCollection<Document> paymentCollection;
 
+    protected int role = -1;
+    protected Publisher publisher = null;
+    protected Customer customer = null;
 
+    public int getRole() {
+        return role;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Manager() {
 

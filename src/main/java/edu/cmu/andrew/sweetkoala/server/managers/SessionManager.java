@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.ws.rs.core.HttpHeaders;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -65,6 +66,7 @@ public class SessionManager {
             {
                 Document item = customerCollection.find(query).first();
                 if (item == null) {
+                    Manager.getInstance().setRole(-1);
                     throw new AppNotFoundException(0, "No customer found matching credentials");
                 }
 
@@ -72,6 +74,8 @@ public class SessionManager {
 
                 customer.setCustomer_Id(item.getObjectId("_id").toString());
                 Session sessionVal = new Session(customer);
+                Manager.getInstance().setCustomer(customer);
+                Manager.getInstance().setRole(0);
                 SessionMapCustomer.put(sessionVal.token,sessionVal);
                 return sessionVal;
             }
@@ -79,6 +83,7 @@ public class SessionManager {
             {
                 Document item = publisherCollection.find(query).first();
                 if (item == null) {
+                    Manager.getInstance().setRole(-1);
                     throw new AppNotFoundException(0, "No publisher found matching credentials");
                 }
 
@@ -86,6 +91,8 @@ public class SessionManager {
 
                 publisher.setPublisher_id(item.getObjectId("_id").toString());
                 Session sessionVal = new Session(publisher);
+                Manager.getInstance().setPublisher(publisher);
+                Manager.getInstance().setRole(1);
                 SessionMapPublisher.put(sessionVal.token,sessionVal);
                 return sessionVal;
             }
@@ -162,5 +169,20 @@ public class SessionManager {
         else
             throw new AppUnauthorizedException(70,"Invalid Token");
 
+    }
+
+    public ArrayList getHomePageInfo() throws Exception {
+        if (Manager.getInstance().getRole() == -1)
+            throw new AppUnauthorizedException(70,"Invalid User");
+        else if (Manager.getInstance().getRole() == -0) {
+            ArrayList<Customer> customerList = new ArrayList<Customer>();
+            customerList.add(Manager.getInstance().getCustomer());
+            return (customerList);
+        }
+        else {
+            ArrayList<Publisher> publisherList = new ArrayList<Publisher>();
+            publisherList.add(Manager.getInstance().getPublisher());
+            return (publisherList);
+        }
     }
 }
