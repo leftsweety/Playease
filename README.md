@@ -29,3 +29,7 @@ https://docs.google.com/document/d/1LB73kDy0dbml9594hyfA0qET76R9GD4L_smwsB3KzLM/
 
 
 V 1.1.4 : Finish all resources' CRUD operations
+
+
+
+V 1.1.5 : Get sessions done
