@@ -105,7 +105,7 @@ public class CommentManager extends Manager {
         commentInsert(db,"comments","","324","234","I like this movie so much!");
 
     }
-    private static void commentInsert(MongoDatabase db, String collectionName,String comment_id, String customer_id, String event_id, String description){
+    static void commentInsert(MongoDatabase db, String collectionName, String comment_id, String customer_id, String event_id, String description){
         MongoCollection<Document> collection = db.getCollection(collectionName);
         Document document = new Document().append("customer_id", customer_id).append("event_id", event_id)
                 .append("description", description);

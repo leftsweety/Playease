@@ -105,7 +105,7 @@ public class PaymentManager extends Manager {
 
 
     }
-    private static void paymentInsert(MongoDatabase db, String collectionName,String payment_id, String order_id, Integer cost, String date, String time){
+    static void paymentInsert(MongoDatabase db, String collectionName, String payment_id, String order_id, Integer cost, String date, String time){
         MongoCollection<Document> collection = db.getCollection(collectionName);
         Document document = new Document().append("order_id", order_id).append("cost",cost).append("date", date).append("time",time);
         collection.insertOne(document);

@@ -102,7 +102,7 @@ public class RatingManager extends Manager {
         ratingInsert(db,"ratings","","113","345",5);
 
     }
-    private static void ratingInsert(MongoDatabase db, String collectionName,String rating_id, String customer_id, String publisher_id, Integer star){
+    static void ratingInsert(MongoDatabase db, String collectionName, String rating_id, String customer_id, String publisher_id, Integer star){
         MongoCollection<Document> collection = db.getCollection(collectionName);
         Document document = new Document().append("customer_id", customer_id).append("publisher_id",publisher_id).append("star", star);
         collection.insertOne(document);

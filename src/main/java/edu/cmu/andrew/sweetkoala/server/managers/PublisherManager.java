@@ -237,10 +237,10 @@ public class PublisherManager extends Manager {
         publisherInsert(db,"publishers","","Rubio","Cao","Koala","123","yo@gmail.com","88888888","hangzhou","001",736);
         publisherInsert(db,"publishers","","Tony","ritu","Rao","89qa","5790dfgh@hlk.com","856788","hangzhou","003",5796);
         publisherInsert(db,"publishers","","Xinyong","Lyu","aray","703","678@fghj.com","4567","Fuyang","002",5666);
-        publisherInsert(db,"publishers","","Xinyong","Lyu","Aray","703","678@fghj.com","4567","Fuyang","002",5666);
+        publisherInsert(db,"publishers","","Ming","Yao","Yaoming","goon","yaoming@gmail.com","796980","SunnyVale","002",7968);
 
     }
-    private static void publisherInsert(MongoDatabase db, String collectionName,String publisher_id, String first_name, String last_name, String username, String password, String email, String phone, String location, String type_id, Integer coin){
+    static void publisherInsert(MongoDatabase db, String collectionName, String publisher_id, String first_name, String last_name, String username, String password, String email, String phone, String location, String type_id, Integer coin){
         MongoCollection<Document> collection = db.getCollection(collectionName);
         Document document = new Document().append("first_name", first_name).append("last_name", last_name)
                 .append("username", username).append("password",password).append("email",email)

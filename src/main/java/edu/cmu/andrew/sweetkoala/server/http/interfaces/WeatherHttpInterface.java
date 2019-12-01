@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.mongodb.client.MongoCollection;
 import edu.cmu.andrew.sweetkoala.server.http.exceptions.HttpBadRequestException;
 import edu.cmu.andrew.sweetkoala.server.http.responses.AppResponse;
-import edu.cmu.andrew.sweetkoala.server.managers.RatingManager;
 import edu.cmu.andrew.sweetkoala.server.models.Weather;
 import edu.cmu.andrew.sweetkoala.server.managers.WeatherManager;
 import edu.cmu.andrew.sweetkoala.server.utils.AppLogger;

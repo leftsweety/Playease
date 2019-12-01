@@ -104,7 +104,7 @@ public class WeatherManager extends Manager {
         weatherInsert(db,"weathers","","113","Sunny");
 
     }
-    private static void weatherInsert(MongoDatabase db, String collectionName,String weather_id, String type_id, String status){
+    static void weatherInsert(MongoDatabase db, String collectionName, String weather_id, String type_id, String status){
         MongoCollection<Document> collection = db.getCollection(collectionName);
         Document document = new Document().append("type_id", type_id).append("status",status);
         collection.insertOne(document);
