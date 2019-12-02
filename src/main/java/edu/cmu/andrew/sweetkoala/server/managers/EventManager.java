@@ -137,6 +137,34 @@ public class EventManager extends Manager {
         }
     }
 
+    public ArrayList<Event> getEventByType(String id, String date) throws AppException {
+        try{
+            ArrayList<Event> eventList = new ArrayList<>();
+            FindIterable<Document> eventDocs = eventCollection.find();
+            for(Document eventDoc: eventDocs) {
+                if(eventDoc.getString("type_id").equals(id) && eventDoc.getString("date").equals(date)) {
+                    Event event = new Event(
+                            eventDoc.getObjectId("_id").toString(),
+                            eventDoc.getString("publisher_id"),
+                            eventDoc.getString("name"),
+                            eventDoc.getString("type_id"),
+                            eventDoc.getString("date"),
+                            eventDoc.getString("time"),
+                            eventDoc.getString("location"),
+                            eventDoc.getInteger("price"),
+                            eventDoc.getInteger("capacity"),
+                            eventDoc.getInteger("recommended_people"),
+                            eventDoc.getString("description")
+                    );
+                    eventList.add(event);
+                }
+            }
+            return new ArrayList<>(eventList);
+        } catch(Exception e){
+            throw handleException("Get Event List", e);
+        }
+    }
+
     public void updateEvent( Event event) throws AppException {
         try {
             Bson filter = new Document("_id", new ObjectId(event.getEvent_Id()));

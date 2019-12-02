@@ -120,7 +120,31 @@ public class OrderManager extends Manager {
         }
     }
 
-    public void updateOrder( Order order) throws AppException {
+    public ArrayList<Order> getOrderByCustomerId(String id) throws AppException {
+        try{
+            ArrayList<Order> orderList = new ArrayList<>();
+            FindIterable<Document> orderDocs = orderCollection.find();
+            for(Document orderDoc: orderDocs) {
+                if(orderDoc.getString("customer_id").equals(id)) {
+                    Order order = new Order(
+                            orderDoc.getObjectId("_id").toString(),
+                            orderDoc.getString("event_id"),
+                            orderDoc.getString("customer_id"),
+                            orderDoc.getString("date"),
+                            orderDoc.getString("time"),
+                            orderDoc.getInteger("number_of_people"),
+                            orderDoc.getString("status")
+                    );
+                    orderList.add(order);
+                }
+            }
+            return new ArrayList<>(orderList);
+        } catch(Exception e){
+            throw handleException("Get Order List", e);
+        }
+    }
+
+    public void updateOrder(Order order) throws AppException {
         try {
             Bson filter = new Document("_id", new ObjectId(order.getOrder_id()));
             Bson newValue = new Document()
