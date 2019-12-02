@@ -41,3 +41,7 @@ V 1.1.6 : Get sample API done with session
 
 
 V 1.1.7 Add some features but not complete them
+
+
+
+V 1.1.8 Complete all features
