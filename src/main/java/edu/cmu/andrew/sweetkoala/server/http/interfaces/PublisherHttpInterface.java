@@ -7,12 +7,8 @@ import com.mongodb.client.MongoCollection;
 import edu.cmu.andrew.sweetkoala.server.http.exceptions.HttpBadRequestException;
 import edu.cmu.andrew.sweetkoala.server.http.responses.AppResponse;
 import edu.cmu.andrew.sweetkoala.server.http.utils.PATCH;
-import edu.cmu.andrew.sweetkoala.server.managers.OrderManager;
-import edu.cmu.andrew.sweetkoala.server.models.Order;
-import edu.cmu.andrew.sweetkoala.server.models.Publisher;
-import edu.cmu.andrew.sweetkoala.server.managers.PublisherManager;
-import edu.cmu.andrew.sweetkoala.server.managers.SessionManager;
-import edu.cmu.andrew.sweetkoala.server.models.Session;
+import edu.cmu.andrew.sweetkoala.server.managers.*;
+import edu.cmu.andrew.sweetkoala.server.models.*;
 import edu.cmu.andrew.sweetkoala.server.utils.*;
 import edu.cmu.andrew.sweetkoala.server.utils.AppLogger;
 import org.bson.Document;
@@ -63,7 +59,6 @@ public class PublisherHttpInterface extends HttpInterface{
         }catch (Exception e){
             throw handleException("POST publishers", e);
         }
-
     }
 
     //Sorting: http://localhost:8080/api/publishers?sortby=coin
@@ -187,7 +182,6 @@ public class PublisherHttpInterface extends HttpInterface{
         }catch (Exception e){
             throw handleException("DELETE publishers/{publisherId}", e);
         }
-
     }
 
     @POST
@@ -249,6 +243,5 @@ public class PublisherHttpInterface extends HttpInterface{
         }
     }
 
-    
 
 }
