@@ -119,7 +119,6 @@ public class SessionHttpService extends HttpInterface{
         }catch (Exception e){
             throw handleException("POST publishers", e);
         }
-
     }
 
     //http://localhost:8080/api/sessions/homepage
