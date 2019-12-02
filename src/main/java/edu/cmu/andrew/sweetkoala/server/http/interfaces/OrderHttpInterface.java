@@ -62,6 +62,7 @@ public class OrderHttpInterface extends HttpInterface {
 
             Order neworder = new Order(
                     null,
+                    json.getString("event_id"),
                     json.getString("customer_id"),
                     json.getString("date"),
                     json.getString("time"),
@@ -128,6 +129,7 @@ public class OrderHttpInterface extends HttpInterface {
             json = new JSONObject(ow.writeValueAsString(request));
             Order order = new Order(
                     orderId,
+                    json.getString("event_id"),
                     json.getString("customer_id"),
                     json.getString("date"),
                     json.getString("time"),

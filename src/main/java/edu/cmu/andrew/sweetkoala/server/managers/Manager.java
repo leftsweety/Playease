@@ -144,9 +144,9 @@ public class Manager {
             favorite_locationManager.getInstance().createFavorite_Location(favorite_location2);
 
             OrderManager orderManager = new OrderManager();
-            Order newOrder1 = new Order(null, cus1, "2019-11-22", "11:11:11", 5, "Cancelled");
+            Order newOrder1 = new Order(null, event1, cus1, "2019-11-22", "11:11:11", 5, "Cancelled");
             orderManager.getInstance().createOrder(newOrder1);
-            Order newOrder2 = new Order(null, cus2, "2019-10-22", "11:17:11", 4, "Completed");
+            Order newOrder2 = new Order(null, event2, cus2, "2019-10-22", "11:17:11", 4, "Completed");
             orderManager.getInstance().createOrder(newOrder2);
 
             String order1 = this.findObjectId("date","2019-11-22", orderCollection);

@@ -39,6 +39,7 @@ public class OrderManager extends Manager {
             Order newOrder1 = new Order(
                     null,
                     "12345678",
+                    "12345678",
                     "2019-11-22",
                     "11:11:11",
                     5,
@@ -57,6 +58,7 @@ public class OrderManager extends Manager {
             JSONObject json = new JSONObject(order);
 
             Document newDoc = new Document()
+                    .append("event_id", order.getEvent_id())
                     .append("customer_id", order.getCustomer_id())
                     .append("date", order.getDate())
                     .append("time", order.getTime())
@@ -79,6 +81,7 @@ public class OrderManager extends Manager {
             for(Document orderDoc: orderDocs) {
                 Order order = new Order(
                         orderDoc.getObjectId("_id").toString(),
+                        orderDoc.getString("event_id"),
                         orderDoc.getString("customer_id"),
                         orderDoc.getString("date"),
                         orderDoc.getString("time"),
@@ -101,6 +104,7 @@ public class OrderManager extends Manager {
                 if(orderDoc.getObjectId("_id").toString().equals(id)) {
                     Order order = new Order(
                             orderDoc.getObjectId("_id").toString(),
+                            orderDoc.getString("event_id"),
                             orderDoc.getString("customer_id"),
                             orderDoc.getString("date"),
                             orderDoc.getString("time"),
@@ -120,6 +124,7 @@ public class OrderManager extends Manager {
         try {
             Bson filter = new Document("_id", new ObjectId(order.getOrder_id()));
             Bson newValue = new Document()
+                    .append("event_id", order.getEvent_id())
                     .append("customer_id", order.getCustomer_id())
                     .append("date", order.getDate())
                     .append("time", order.getTime())

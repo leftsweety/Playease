@@ -7,6 +7,8 @@ import com.mongodb.client.MongoCollection;
 import edu.cmu.andrew.sweetkoala.server.http.exceptions.HttpBadRequestException;
 import edu.cmu.andrew.sweetkoala.server.http.responses.AppResponse;
 import edu.cmu.andrew.sweetkoala.server.http.utils.PATCH;
+import edu.cmu.andrew.sweetkoala.server.managers.OrderManager;
+import edu.cmu.andrew.sweetkoala.server.models.Order;
 import edu.cmu.andrew.sweetkoala.server.models.Publisher;
 import edu.cmu.andrew.sweetkoala.server.managers.PublisherManager;
 import edu.cmu.andrew.sweetkoala.server.managers.SessionManager;
@@ -228,8 +230,25 @@ public class PublisherHttpInterface extends HttpInterface{
         }catch (Exception e){
             throw handleException("GET /publishers/{publisherId}", e);
         }
-
-
     }
+
+    // http://localhost:8080/api/publishers/weather/5de34728c97ba821ce644f1e
+    @GET
+    @Path("/weather/{publisherId}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public AppResponse getPublisherWeather(@Context HttpHeaders headers, @PathParam("publisherId") String publisherId){
+
+        try{
+            Session session = SessionManager.getInstance().getSessionForTokenPublisher(headers);
+            if(!session.getUserId().equals(publisherId))
+                throw new HttpBadRequestException(0, "Invalid user id");
+            AppLogger.info("Got an API call");
+            return new AppResponse("Sunny");
+        }catch (Exception e){
+            throw handleException("GET /publishers/{publisherId}", e);
+        }
+    }
+
+    
 
 }

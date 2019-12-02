@@ -3,14 +3,16 @@ package edu.cmu.andrew.sweetkoala.server.models;
 public class Order {
 
     String order_id = null;
+    String event_id = null;
     String customer_id = null;
     String date = null;
     String time = null;
     Integer number_of_people = null;
     String status = null;
 
-    public Order(String order_id, String customer_id, String date, String time, Integer number_of_people, String status) {
+    public Order(String order_id, String event_id, String customer_id, String date, String time, Integer number_of_people, String status) {
         this.order_id = order_id;
+        this.event_id = event_id;
         this.customer_id = customer_id;
         this.date = date;
         this.time = time;
@@ -20,6 +22,10 @@ public class Order {
 
     public String getOrder_id() {
         return order_id;
+    }
+
+    public String getEvent_id() {
+        return event_id;
     }
 
     public String getCustomer_id() {
@@ -44,6 +50,10 @@ public class Order {
 
     public void setOrder_id(String order_id) {
         this.order_id = order_id;
+    }
+
+    public void setEvent_id(String event_id) {
+        this.event_id = event_id;
     }
 
     public void setCustomer_id(String customer_id) {
