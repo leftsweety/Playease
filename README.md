@@ -37,3 +37,7 @@ V 1.1.5 : Get sessions done
 
 
 V 1.1.6 : Get sample API done with session
+
+
+
+V 1.1.7 Add some features but not complete them
