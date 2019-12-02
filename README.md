@@ -45,3 +45,7 @@ V 1.1.7 Add some features but not complete them
 
 
 V 1.1.8 Complete all features
+
+
+
+V 1.2.1 Merging finished
