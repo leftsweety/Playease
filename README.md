@@ -49,3 +49,15 @@ V 1.1.8 Complete all features
 
 
 V 1.2.1 Merging finished
+
+
+
+V 1.3.1 Create final delivery branch and APIs documents for Zuotian Li and Zihan Cao
+
+**APP Project Final APIs for Zuotian Li**
+
+https://docs.google.com/document/d/1UA9NDKjEgV2Yg6zCEB6q7MhELVuGzxHQge9C1Sq31aU/edit?usp=sharing
+
+**APP Project Final APIs for Zihan Cao**
+
+https://docs.google.com/document/d/12ynU3V6SdXSbqqSyFQT_Wq3k4ErpjQVW_rYriCIXVko/edit?usp=sharing
